@@ -8,9 +8,21 @@ void setup()
   pinMode(TRIGpin, OUTPUT); // It sets the ECHO pin as OUTPUT  
   pinMode(ECHOpin, INPUT); // It sets the TRIG pin as INPUT  
   Serial.begin(9600); // // Serial Communication at the rate of 9600 bps  
-}  
-void loop()   
-{  
+}   
+
+void loop() {
+  if (Serial.available() > 0) {
+    char dataUtrasonic = Serial.read();
+
+    if (data == 'u') {
+      read_ultrasonicSensor();
+    } 
+    
+  }
+}
+
+read_ultrasonicSensor() {
+ 
   // It first sets the TRIG pin at LOW for 2 microseconds  
   digitalWrite(TRIGpin, LOW);  
   delayMicroseconds(4);  
@@ -27,4 +39,4 @@ void loop()
   Serial.print(distance);  
   Serial.println();
   
-
+}
