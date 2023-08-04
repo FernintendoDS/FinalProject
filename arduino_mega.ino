@@ -1,26 +1,27 @@
-#define ECHOpin 2 // it defines the ECHO pin of the sensor to pin 5 of Arduino   
-#define TRIGpin 4  
-#define ECHOpin 7 // it defines the ECHO pin of the sensor to pin 5 of Arduino   
-#define TRIGpin 8 
-#define ECHOpin 12 // it defines the ECHO pin of the sensor to pin 5 of Arduino   
-#define TRIGpin 13
+#define ECHOpin 2 // it defines the ECHO pin of the sensor to pin 2 of Arduino   
+#define TRIGpin 4  // it defines the TRIGGER pin of the sensor to pin 4 of Arduino 
+#define ECHOpin 7 // it defines the ECHO pin of the sensor to pin 7 of Arduino   
+#define TRIGpin 8 // it defines the TRIGGER pin of the sensor to pin 8 of Arduino 
+#define ECHOpin 12 // it defines the ECHO pin of the sensor to pin 12 of Arduino   
+#define TRIGpin 13 // it defines the TRIGGER pin of the sensor to pin 13 of Arduino 
 
 
 // we have defined the variable  
-long duration1; // variable for the duration of sound wave travel  
-int distance1; // variable for the distance measurement  
-long duration2; // variable for the duration of sound wave travel  
-int distance2; // variable for the distance measurement  
-long duration3; // variable for the duration of sound wave travel  
-int distance3; // variable for the distance measurement  
+long duration1; // variable for the duration1 of sound wave travel  
+int distance1; // variable for the distance1 measurement  
+long duration2; // variable for the duration2 of sound wave travel  
+int distance2; // variable for the distance2 measurement  
+long duration3; // variable for the duration3 of sound wave travel  
+int distance3; // variable for the distance3 measurement  
 void setup()   
 {  
-  pinMode(TRIGpin1, OUTPUT); // It sets the ECHO pin as OUTPUT  
-  pinMode(ECHOpin1, INPUT); // It sets the TRIG pin as INPUT  
-  pinMode(TRIGpin2, OUTPUT); // It sets the ECHO pin as OUTPUT  
-  pinMode(ECHOpin2, INPUT); // It sets the TRIG pin as INPUT  
-  pinMode(TRIGpin3, OUTPUT); // It sets the ECHO pin as OUTPUT  
-  pinMode(ECHOpin3, INPUT); // It sets the TRIG pin as INPUT  
+  pinMode(TRIGpin1, OUTPUT); // It sets the ECHO1 pin as OUTPUT  
+  pinMode(ECHOpin1, INPUT); // It sets the TRIG1 pin as INPUT  
+  pinMode(TRIGpin2, OUTPUT); // It sets the ECHO2 pin as OUTPUT  
+  pinMode(ECHOpin2, INPUT); // It sets the TRIG2 pin as INPUT  
+  pinMode(TRIGpin3, OUTPUT); // It sets the ECHO3 pin as OUTPUT  
+  pinMode(ECHOpin3, INPUT); // It sets the TRIG3 pin as INPUT 
+  
   Serial.begin(9600); // // Serial Communication at the rate of 9600 bps  
 }   
 
