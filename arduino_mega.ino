@@ -15,12 +15,12 @@ long duration3; // variable for the duration3 of sound wave travel
 int distance3; // variable for the distance3 measurement  
 void setup()   
 {  
-  pinMode(TRIGpin1, OUTPUT); // It sets the ECHO1 pin as OUTPUT  
-  pinMode(ECHOpin1, INPUT); // It sets the TRIG1 pin as INPUT  
-  pinMode(TRIGpin2, OUTPUT); // It sets the ECHO2 pin as OUTPUT  
-  pinMode(ECHOpin2, INPUT); // It sets the TRIG2 pin as INPUT  
+  pinMode(TRIGpin1, OUTPUT); // It sets the ECHO pin as OUTPUT  
+  pinMode(ECHOpin1, INPUT); // It sets the TRIG pin as INPUT  
+  pinMode(TRIGpin2, OUTPUT); // It sets the ECHO pin as OUTPUT  
+  pinMode(ECHOpin2, INPUT); // It sets the TRIG pin as INPUT  
   pinMode(TRIGpin3, OUTPUT); // It sets the ECHO3 pin as OUTPUT  
-  pinMode(ECHOpin3, INPUT); // It sets the TRIG3 pin as INPUT 
+  pinMode(ECHOpin3, INPUT); // It sets the TRIG pin as INPUT 
   
   Serial.begin(9600); // // Serial Communication at the rate of 9600 bps  
 }   
