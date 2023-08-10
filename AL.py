@@ -1,8 +1,8 @@
 import serial
 import time
 import struct
-arduino = serial.Serial('/dev/ttyACM0', 9600, timeout=1.0)
-time.sleep(3)
+arduino = serial.Serial('/dev/ttyACM6', 9600, timeout=1.0)
+time.sleep(1)
 
 def arduino_send(data):
     arduino.write(data.encode())
@@ -12,27 +12,38 @@ def arduino_read():
     return data
 
 def get_imu():
-    arduino.write('i')
+    arduino_send('i')
     data = arduino_read()
     return data
     
-def get_ultrasonic_back():
-    arduino.write('u')
+def get_ultrasonic_back1():
+    arduino_send('u')
+    data = arduino_read()
+    return data
+
+def get_ultrasonic_back2():
+    arduino_send('s')
+    data = arduino_read()
+    return data
+
+def get_ultrasonic_back3():
+    arduino_send('t')
     data = arduino_read()
     return data
 
 def motor_control():
-    arduino.write('m')
+    arduino_send('m')
     data = arduino_read()
     return data
 
 def fan_control():
-    arduino.write('f')
+    arduino_send('f')
     data = arduino_read()
     return data
 
 def get_temp():
-    arduino.write('t')
+    arduino_send('t')
     data = arduino_read()
     return data
+
 
