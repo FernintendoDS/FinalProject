@@ -20,7 +20,7 @@ void setup() {
 
 void loop() {
   if (Serial.available() > 0) {
-    char dataUtrasonic = Serial.read();
+    char data = Serial.read();
 
     if (data == 'u') {
       read_ultrasonic(1,"UF1"); 
