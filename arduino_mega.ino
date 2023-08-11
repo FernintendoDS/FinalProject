@@ -1,18 +1,15 @@
-#define ECHOpin 2 // it defines the ECHO pin of the sensor to pin 2 of Arduino   
-#define TRIGpin 4  // it defines the TRIGGER pin of the sensor to pin 4 of Arduino 
-#define ECHOpin 7 // it defines the ECHO pin of the sensor to pin 7 of Arduino   
-#define TRIGpin 8 // it defines the TRIGGER pin of the sensor to pin 8 of Arduino 
-#define ECHOpin 12 // it defines the ECHO pin of the sensor to pin 12 of Arduino   
-#define TRIGpin 13 // it defines the TRIGGER pin of the sensor to pin 13 of Arduino 
+#define ECHOpin1 2 // it defines the ECHO pin of the sensor to pin 2 of Arduino   
+#define TRIGpin1 4  // it defines the TRIGGER pin of the sensor to pin 4 of Arduino 
+#define ECHOpin2 7 // it defines the ECHO pin of the sensor to pin 7 of Arduino   
+#define TRIGpin2 8 // it defines the TRIGGER pin of the sensor to pin 8 of Arduino 
+#define ECHOpin3 12 // it defines the ECHO pin of the sensor to pin 12 of Arduino   
+#define TRIGpin3 13 // it defines the TRIGGER pin of the sensor to pin 13 of Arduino 
 
 
 // we have defined the variable  
-long duration1; // variable for the duration1 of sound wave travel  
-int distance1; // variable for the distance1 measurement  
-long duration2; // variable for the duration2 of sound wave travel  
-int distance2; // variable for the distance2 measurement  
-long duration3; // variable for the duration3 of sound wave travel  
-int distance3; // variable for the distance3 measurement  
+long duration; // variable for the duration1 of sound wave travel  
+int distance; // variable for the distance1 measurement  
+
 void setup()   
 {  
   pinMode(TRIGpin1, OUTPUT); // It sets the ECHO pin as OUTPUT  
@@ -30,30 +27,26 @@ void loop() {
     char dataUtrasonic = Serial.read();
 
     if (data == 'u') {
-      read_ultrasonicSensor1();
-      read_ultrasonicSensor2();
-      read_ultrasonicSensor3();
-    
+      read_ultrasonicSensor(); 
     } 
     
   }
 }
 
-read_ultrasonicSensor1() {
+read_ultrasonicSensor(int num, String tag) {
  
-  // It first sets the TRIG pin at LOW for 2 microseconds  
+
   digitalWrite(TRIGpin1, LOW);  
   delayMicroseconds(4);  
-  // It now sets TRIG pin at HIGH for 15 microseconds  
+
   digitalWrite(TRIGpin1, HIGH);  
   delayMicroseconds(4);  
   digitalWrite(TRIGpin1, LOW);  
-  // It will read the ECHO pin and will return the time   
+
   duration = pulseIn(ECHOpin1, HIGH);  
-  // distance formula  
-  distance1 = duration1*(0.034/2); // (speed in microseconds)  
-  // Speed of sound wave (340 m/s)divided by 2 (forward and backward bounce)  
-  // To display the distance on Serial Monitor  
+
+  distance1 = duration1*(0.034/2); 
+
   Serial.print(distance1);  
   Serial.println();
   
