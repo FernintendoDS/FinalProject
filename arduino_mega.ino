@@ -27,65 +27,42 @@ void loop() {
     char dataUtrasonic = Serial.read();
 
     if (data == 'u') {
-      read_ultrasonicSensor(); 
+      read_ultrasonicSensor(1,"UF1"); 
+      read_ultrasonicSensor(2,"UF2"); 
+      read_ultrasonicSensor(3,"UF3"); 
     } 
     
   }
 }
 
-read_ultrasonicSensor(int num, String tag) {
+read_ultrasonicSensor(int number, String text) {
  
-
+if (number == 1) {
   digitalWrite(TRIGpin1, LOW);  
   delayMicroseconds(4);  
-
   digitalWrite(TRIGpin1, HIGH);  
   delayMicroseconds(4);  
   digitalWrite(TRIGpin1, LOW);  
-
   duration = pulseIn(ECHOpin1, HIGH);  
-
-  distance1 = duration1*(0.034/2); 
-
-  Serial.print(distance1);  
-  Serial.println();
-  
 }
-read_ultrasonicSensor2() {
- 
-  // It first sets the TRIG pin at LOW for 2 microseconds  
+if (number == 2) {
   digitalWrite(TRIGpin2, LOW);  
   delayMicroseconds(4);  
-  // It now sets TRIG pin at HIGH for 15 microseconds  
   digitalWrite(TRIGpin2, HIGH);  
   delayMicroseconds(4);  
   digitalWrite(TRIGpin2, LOW);  
-  // It will read the ECHO pin and will return the time   
-  duration2 = pulseIn(ECHOpin2, HIGH);  
-  // distance formula  
-  distance2 = duration2*(0.034/2); // (speed in microseconds)  
-  // Speed of sound wave (340 m/s)divided by 2 (forward and backward bounce)  
-  // To display the distance on Serial Monitor  
-  Serial.print(distance2);  
-  Serial.println();
-  
+  duration = pulseIn(ECHOpin2, HIGH);  
 }
-read_ultrasonicSensor3() {
- 
-  // It first sets the TRIG pin at LOW for 2 microseconds  
+if (number == 3) {
   digitalWrite(TRIGpin3, LOW);  
   delayMicroseconds(4);  
-  // It now sets TRIG pin at HIGH for 15 microseconds  
   digitalWrite(TRIGpin3, HIGH);  
   delayMicroseconds(4);  
   digitalWrite(TRIGpin3, LOW);  
-  // It will read the ECHO pin and will return the time   
-  duration3 = pulseIn(ECHOpin3, HIGH);  
-  // distance formula  
-  distance3 = duration3*(0.034/2); // (speed in microseconds)  
-  // Speed of sound wave (340 m/s)divided by 2 (forward and backward bounce)  
-  // To display the distance on Serial Monitor  
-  Serial.print(distance3);  
-  Serial.println();
+  duration = pulseIn(ECHOpin3, HIGH);  
+}
+  distance = duration*(0.034/2); 
+  Serial.print(text); Serial.print(" ");  
+  Serial.println(distance);
   
 }
