@@ -15,14 +15,12 @@ def extract_data(d, tag):
     
 def mainnew():
     while True:
-        d = AL.get_ultrasonic_back1()
+        d = AL.get_ultrasonic_back()
         dataUB1 = extract_data(d, "UB1")
         print("UB1 "+dataUB1)
-        b = AL.get_ultrasonic_back2()
-        dataUB2 = extract_data(b, "UB2")
+        dataUB2 = extract_data(d, "UB2")
         print("UB2 "+dataUB2)
-        c = AL.get_ultrasonic_back3()
-        dataUB3 = extract_data(c, "UB3")
+        dataUB3 = extract_data(d, "UB3")
         print("UB3 "+dataUB3)
        
 mainnew()
