@@ -12,18 +12,15 @@ void setup() {
 void loop() {
   if (Serial.available() > 0) {
     char data = Serial.read();
-      if(data == 'u')
-      { read_ultrasonic(2,"U1");
+      if(data == 'u'){ 
+      read_ultrasonic(2,"UF1");
       }
-   
       if(data == 's'){
-      read_ultrasonic(3,"U2");
+      read_ultrasonic(3,"UF2");
       }
-       if(data == 't')
-       {
-      read_ultrasonic(4,"U3");
-   
-       }
+      if(data == 't'){
+      read_ultrasonic(4,"UF3");
+      }
 }
 }
 void read_ultrasonic(int number,String text) {
