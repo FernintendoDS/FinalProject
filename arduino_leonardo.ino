@@ -13,9 +13,9 @@ void loop() {
   if (Serial.available() > 0) {
     char data = Serial.read();
       if(data == 'u'){ 
-      read_ultrasonic(2,"UB1");
-      read_ultrasonic(3,"UB2");
-      read_ultrasonic(4,"UB3");
+      read_ultrasonic(2,"UBL");
+      read_ultrasonic(3,"UBM");
+      read_ultrasonic(4,"UBR");
 }
 }
 void read_ultrasonic(int number,String text) {
