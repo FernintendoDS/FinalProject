@@ -31,7 +31,7 @@ void loop() {
   }
 }
 
-read_ultrasonic(int number, String text) {
+void read_ultrasonic(int number, String text) {
 if (number == 1) {
   digitalWrite(TRIGpin1, LOW);  
   delayMicroseconds(4);  
