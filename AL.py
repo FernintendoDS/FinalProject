@@ -16,18 +16,8 @@ def get_imu():
     data = arduino_read()
     return data
     
-def get_ultrasonic_back1():
+def get_ultrasonic_back():
     arduino_send('u')
-    data = arduino_read()
-    return data
-
-def get_ultrasonic_back2():
-    arduino_send('s')
-    data = arduino_read()
-    return data
-
-def get_ultrasonic_back3():
-    arduino_send('t')
     data = arduino_read()
     return data
 
