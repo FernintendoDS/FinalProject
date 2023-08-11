@@ -4,21 +4,17 @@
 #define TRIGpin2 8 // it defines the TRIGGER pin of the sensor to pin 8 of Arduino 
 #define ECHOpin3 12 // it defines the ECHO pin of the sensor to pin 12 of Arduino   
 #define TRIGpin3 13 // it defines the TRIGGER pin of the sensor to pin 13 of Arduino 
-
-
-// we have defined the variable  
+ 
 long duration; // variable for the duration1 of sound wave travel  
 int distance; // variable for the distance1 measurement  
 
-void setup()   
-{  
+void setup() {  
   pinMode(TRIGpin1, OUTPUT); // It sets the ECHO pin as OUTPUT  
   pinMode(ECHOpin1, INPUT); // It sets the TRIG pin as INPUT  
   pinMode(TRIGpin2, OUTPUT); // It sets the ECHO pin as OUTPUT  
   pinMode(ECHOpin2, INPUT); // It sets the TRIG pin as INPUT  
   pinMode(TRIGpin3, OUTPUT); // It sets the ECHO3 pin as OUTPUT  
   pinMode(ECHOpin3, INPUT); // It sets the TRIG pin as INPUT 
-  
   Serial.begin(9600); // // Serial Communication at the rate of 9600 bps  
 }   
 
@@ -27,16 +23,15 @@ void loop() {
     char dataUtrasonic = Serial.read();
 
     if (data == 'u') {
-      read_ultrasonicSensor(1,"UF1"); 
-      read_ultrasonicSensor(2,"UF2"); 
-      read_ultrasonicSensor(3,"UF3"); 
+      read_ultrasonic(1,"UF1"); 
+      read_ultrasonic(2,"UF2"); 
+      read_ultrasonic(3,"UF3"); 
     } 
     
   }
 }
 
-read_ultrasonicSensor(int number, String text) {
- 
+read_ultrasonic(int number, String text) {
 if (number == 1) {
   digitalWrite(TRIGpin1, LOW);  
   delayMicroseconds(4);  
