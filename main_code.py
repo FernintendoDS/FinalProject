@@ -16,11 +16,11 @@ def extract_data(d, tag):
 def mainnew():
     while True:
         d = AL.get_ultrasonic_back()
-        dataUB1 = extract_data(d, "UB1")
-        print("UB1 "+dataUB1)
-        dataUB2 = extract_data(d, "UB2")
-        print("UB2 "+dataUB2)
-        dataUB3 = extract_data(d, "UB3")
-        print("UB3 "+dataUB3)
+        dataUBL = extract_data(d, "UBL")
+        print("UB1 "+dataUBL)
+        dataUBM = extract_data(d, "UBM")
+        print("UB2 "+dataUBM)
+        dataUBR = extract_data(d, "UBR")
+        print("UB3 "+dataUBR)
        
 mainnew()
