@@ -13,13 +13,13 @@ void loop() {
   if (Serial.available() > 0) {
     char data = Serial.read();
       if(data == 'u'){ 
-      read_ultrasonic(2,"UF1");
+      read_ultrasonic(2,"UB1");
       }
       if(data == 's'){
-      read_ultrasonic(3,"UF2");
+      read_ultrasonic(3,"UB2");
       }
       if(data == 't'){
-      read_ultrasonic(4,"UF3");
+      read_ultrasonic(4,"UB3");
       }
 }
 }
